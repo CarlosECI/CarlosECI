@@ -1,9 +1,5 @@
 name: Update README
 
-env:
-  ACTIONS_RUNNER_DEBUG: true
-  ACTIONS_STEP_DEBUG: true
-
 on:
   schedule:
     - cron: "* */12 * * *"
@@ -15,8 +11,16 @@ jobs:
     name: Update Profile README
 
     steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Check README.md exists
+        run: ls -l && cat README.md
+
       - uses: Readme-Workflows/recent-activity@v2.4.1
         with:
-          FILE_NAME: README.md
+          GH_USERNAME: CarlosECI
+          CONFIG_FILE: .github/recent-activity.config.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
