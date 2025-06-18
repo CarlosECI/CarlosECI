@@ -16,5 +16,7 @@ jobs:
 
     steps:
       - uses: Readme-Workflows/recent-activity@v2.4.1
+        with:
+          FILE_NAME: README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
