@@ -18,9 +18,8 @@ jobs:
       - name: Check README.md exists
         run: ls -l && cat README.md
 
-      - uses: Readme-Workflows/recent-activity@v2.4.1
+      - uses: jessicalostinspace/github-activity-readme@0.4.1
         with:
-          GH_USERNAME: CarlosECI
-          CONFIG_FILE: .github/recent-activity.config.yml
+          MAX_LINES: 5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
