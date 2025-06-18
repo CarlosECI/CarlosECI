@@ -12,14 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Check README.md exists
-        run: ls -l && cat README.md
-
-      - uses: jessicalostinspace/github-activity-readme@0.4.1
+      - uses: Readme-Workflows/github-activity-readme@v1
         with:
-          MAX_LINES: 5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
