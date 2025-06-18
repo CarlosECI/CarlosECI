@@ -1,0 +1,7 @@
+max: 5
+
+events:
+  - PushEvent
+  - IssuesEvent
+  - PullRequestEvent
+  - IssueCommentEvent
